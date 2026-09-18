@@ -11,6 +11,11 @@ target/
 *.iws
 out/
 
+# JDTLS
+**/.project
+**/.classpath
+**/.settings/
+
 # Compiled class file
 *.class
 
