@@ -18,10 +18,6 @@ hide empty members
 '   Interface <|.. Class    ' realization:    Class implements Interface
 ' (Putting the parent/interface on the LEFT of the arrow keeps it on top.)
 
-Vehicle <|-- Car
-Car <|-- ElectricCar
-Chargeable <|.. ElectricCar
-
 interface Chargeable {
   + charge() : void
 }
@@ -44,8 +40,7 @@ class ElectricCar {
   + charge() : void
 }
 
-' TODO: add "abstract class Vehicle", "class Car", and "class ElectricCar"
-'       (with their fields and methods), then add the arrows between all four
-'       types.
-
+Vehicle <|-- Car
+Car <|-- ElectricCar
+Chargeable <|.. ElectricCar
 @enduml
