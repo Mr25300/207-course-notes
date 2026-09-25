@@ -1,3 +1,6 @@
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -28,10 +31,14 @@ public class CounterPanel extends JPanel {
   public CounterPanel() {
     add(label);
     add(button);
-    // TODO: add an action listener to `button` (see Chapter 4.3:
-    //       button.addActionListener(...)). When the button is clicked, its
-    //       actionPerformed should increment `count` and then call
-    //       label.setText("Count: " + count) so the label shows the new total.
+
+    button.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        count++;
+        label.setText("Count: " + count);
+      }
+    });
   }
 
   /**
