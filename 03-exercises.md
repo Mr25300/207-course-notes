@@ -12,7 +12,7 @@ abstract class Account {
         this.balance += amount;
     }
 
-    public abstract bool withdraw(double amount);
+    public abstract boolean withdraw(double amount);
 }
 
 interface InterestBearing {
@@ -28,7 +28,7 @@ class ChequingAccount extends Account {
         this.overdraftLimit = overdraftLimit;
     }
 
-    public bool withdraw(double amount) {
+    public boolean withdraw(double amount) {
         if (this.balance + overdraftLimit < amount) {
             return false;
         }
@@ -48,7 +48,7 @@ class SavingsAccount extends Account implements InterestBearing {
         this.rate = rate;
     }
 
-    public bool withdraw(double amount) {
+    public boolean withdraw(double amount) {
         if (this.balance < amount) {
             return false;
         }
