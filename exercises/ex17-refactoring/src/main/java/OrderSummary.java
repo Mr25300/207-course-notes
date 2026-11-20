@@ -111,9 +111,6 @@ public class OrderSummary {
     double tax = taxable * 0.13;
     double total = taxable + tax;
 
-    // TODO (Extract Method, 13.2): everything from here down is one job —
-    //      formatting the report. Pull it out into its own well-named method
-    //      (and the per-item line into a second one).
     return getReportString(customer, itemNames, itemPrices, premiumCount, subtotal, discount, tax, total);
   }
 }
