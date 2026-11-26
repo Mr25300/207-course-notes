@@ -29,18 +29,25 @@ abstract class Item {
 
 abstract class Borrowable {
   - loanPeriod : int
-  - currentHolds : List<Member>
+  - currentHolds : List<Hold>
   + borrow() : void
   + isOnLoan() : bool
-  + addHold(member : Member) : void
+  + addHold(hold : Hold) : void
 }
 
-class Book {}
-class DVD {}
+class Hold {
+  - createdAt : int
+  - createdBy : Member
+}
 
 Item <|-- Borrowable
 Borrowable <|-- Book
 Borrowable <|-- DVD
+Borrowable o--> Hold
+Hold o--> Member
+
+class Book {}
+class DVD {}
 
 abstract class User {
   - name : String
@@ -60,5 +67,8 @@ class Librarian {
 
 User <|-- Member
 User <|-- Librarian
+Member o--> Borrowable
+Librarian o--> Member
+Librarian o--> Item
 
 @enduml
