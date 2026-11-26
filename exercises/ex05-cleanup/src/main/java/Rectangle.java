@@ -28,7 +28,7 @@ public class Rectangle {
   /**
    * Scales the rectangle.
    *
-   * @param factor
+   * @param factor the factor to scale the rectangle by
    */
   public void scale(double factor) {
     width = width * factor;
